@@ -180,7 +180,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(title: Text("Secret Data Screen")),
       body: Center(
         child: FutureBuilder(
-          future: http.read('$SERVER_IP/data', headers: {"Authorization": jwt}),
+          future: http.read('$SERVER_IP/data', headers: {"CSRF": jwt}),
           builder: (context, snapshot) =>
             snapshot.hasData ?
             Column(children: <Widget>[
